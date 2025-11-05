@@ -19,10 +19,12 @@ def requires_auth(f):
         return f(*args, **kwargs)
     return decorated
 
-@app.route('/', methods=['GET'])
-@requires_auth
-def hi():
-    return jsonify({"message": "hello world!!"})
+# Example :
+# @app.route('/', methods=['GET'])
+# @requires_auth
+# def hi():
+#     return jsonify({"message": "hello world!!"})
 
 if __name__ == '__main__':
     app.run(debug=True)
+
