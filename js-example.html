@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="fa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>درخواست به API</title>
+</head>
+<body>
+
+    <p class="r">در حال بارگذاری...</p>
+
+    <script src="request-to-api.js"></script>
+    <script>
+        async function loadData() {
+            const result = await req();
+            const paragraph = document.querySelector(".r");
+
+            if (result && result.message) {
+                paragraph.innerText = `${JSON.stringify(result)}`;
+            } else {
+                await re_req()
+                paragraph.innerText = "خطا در دریافت داده";
+            }
+        }
+
+        loadData();
+    </script>
+</body>
+</html>
